@@ -1,0 +1,139 @@
+body,
+html {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  font-family: Arial, sans-serif;
+  overflow: hidden;
+  background-color: #1a1a1a;
+}
+
+.container {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(circle at center, #2a2a2a 0%, #1a1a1a 100%);
+}
+
+.heart-container {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 400px;
+  height: 400px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 0;
+}
+
+.anatomical-heart {
+  width: 100%;
+  height: 100%;
+  background-image: url("https://easy-peasy.ai/cdn-cgi/image/quality=80,format=auto,width=700/https://fdczvxmwwjwpwbeeqcth.supabase.co/storage/v1/object/public/images/c37b2116-2a74-483f-bac5-030165cb9384/ca3d8440-2176-4e92-bb0d-5eb0f36e9d00.png");
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-image: transparent;
+  border-radius: 50%;
+  animation: heartbeat 1.5s ease-in-out infinite;
+  filter: drop-shadow(0 0 10px rgba(255, 0, 0, 0.3));
+}
+
+@keyframes heartbeat {
+  0% {
+    transform: scale(1);
+  }
+  5% {
+    transform: scale(1.1);
+  }
+  10% {
+    transform: scale(1);
+  }
+  15% {
+    transform: scale(1.1);
+  }
+  20% {
+    transform: scale(1);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+.message-box {
+  position: absolute;
+  width: 200px;
+  height: 100px;
+  background-color: rgba(255, 255, 255, 0.9);
+  border-radius: 10px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  cursor: pointer;
+  overflow: hidden;
+  transition: all 0.3s ease;
+  z-index: 1;
+  backdrop-filter: blur(5px);
+}
+
+.message-box h2 {
+  margin: 0;
+  padding: 10px;
+  background-color: #ff3366;
+  color: #ffffff;
+  font-size: 18px;
+  text-align: center;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+}
+
+.message-box .note-content {
+  display: none;
+  padding: 15px;
+  font-size: 14px;
+  line-height: 1.5;
+  text-align: center;
+  color: #333;
+}
+
+.message-box.expanded {
+  width: 280px;
+  height: auto;
+  z-index: 10;
+}
+
+.message-box.expanded .note-content {
+  display: block;
+}
+
+@media (max-width: 768px) {
+  .heart-container {
+    width: 300px;
+    height: 300px;
+  }
+
+  .message-box {
+    width: 150px;
+    height: 80px;
+  }
+
+  .message-box h2 {
+    font-size: 16px;
+  }
+
+  .message-box.expanded {
+    width: 220px;
+  }
+
+  .message-box .note-content {
+    font-size: 12px;
+    padding: 10px;
+  }
+}
+
+@media (max-width: 480px) {
+  .heart-container {
+    width: 250px;
+    height: 250px;
+  }
+}
+
